@@ -1,5 +1,13 @@
-all: add-nbo
+all: test1
 
-add-nbo: byte_ping.c
-	g++ -o add-nbo byte_ping.c
+test1: test1.o
+	g++ -o test1 test1.o
+
+test1.o: file.h test1.cpp
+	g++ -c -o test1.o test1.cpp
+
+clean:
+	rm -f test1.o
+
+
 
